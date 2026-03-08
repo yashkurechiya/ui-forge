@@ -9,6 +9,10 @@ import ComponentDetailPage from "./pages/ComponentDetailPage";
 import TemplatesPage from "./pages/TemplatesPage";
 import TemplateDetailPage from "./pages/TemplateDetailPage";
 import NotFound from "./pages/NotFound";
+import Hero from "./pages/Hero";
+import Mypages from "./pages/Mypages";
+import PageDetails from "./pages/PageDetails";
+import { heroes } from "./data/herodata";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +29,9 @@ const App = () => (
           <Route path="/templates" element={<TemplatesPage />} />
           <Route path="/templates/:id" element={<TemplateDetailPage />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/hero" element={<Hero />} />
+          <Route path="/mypages" element={<Mypages />} />
+          <Route path="/hero/:id" element={<PageDetails heroes={heroes} />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
