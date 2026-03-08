@@ -1,7 +1,9 @@
+import hero1 from "/assets/hero1.png"
+
 export const heroes = [
   {
     id: 1,
-    image: "/assets/hero1.png",
+    image: hero1,
     code: `const Hero = () => {
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-zinc-100 font-sans selection:bg-yellow-200">
