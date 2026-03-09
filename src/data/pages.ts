@@ -3,10 +3,15 @@ import hero2 from "/assets/hero2.png";
 import hero3 from "/assets/hero3.png";
 import hero4 from "/assets/hero4.png";
 import hero5 from "/assets/hero5.png";
+import hero6 from "/assets/hero6.png";
+import hero7 from "/assets/hero7.png";
+import hero8 from "/assets/hero8.png";
+import hero9 from "/assets/hero9.png";
+import hero10 from "/assets/hero10.png";
 
 export interface PageComponent {
   id: string;
-  image:string;
+  image: string;
   category: string;
   code: string;
 }
@@ -16,8 +21,6 @@ export const categories = [
 ];
 
 export const components: PageComponent[] = [
- 
-    
   {
     id: "1",
     category: "Hero",
@@ -120,8 +123,8 @@ export default Hero;
   },
   {
     id: "3",
-    image: hero2,
     category: "Hero",
+    image: hero2,
     code: `import { HeartOff } from 'lucide-react';
     import React from 'react';
     
@@ -214,8 +217,8 @@ export default Hero;
   },
   {
     id: "2",
-    image: hero3,
     category: "Hero",
+    image: hero3,
     code: `import React from 'react';
 import { ShoppingBag, User, Menu, ArrowUpRight } from 'lucide-react';
 
@@ -293,8 +296,8 @@ export default Hero;`,
   },
   {
     id: "4",
-    image: hero4,
     category: "Hero",
+    image: hero4,
     code: `const RenovationHero = () => {
   return (
     <div className="relative min-h-screen w-full bg-zinc-900 font-sans text-white overflow-hidden">
@@ -384,8 +387,8 @@ export default RenovationHero;`,
   },
   {
     id: "5",
-    image: hero5,
     category: "Hero",
+    image: hero5,
     code: `const Hero = () => {
   return (
     <div className="relative min-h-screen w-full bg-black font-sans text-white overflow-hidden">
@@ -447,20 +450,20 @@ export default RenovationHero;`,
                Acknowledged by industry leaders
              </span>
              <div className="flex items-center gap-12 grayscale opacity-60">
-                {/* Mockup SVG Logos */}
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 border-2 border-white rounded-sm flex items-center justify-center font-bold italic">G</div>
-                  <span className="text-sm font-bold tracking-tighter">CyberAI</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 border-2 border-dashed border-white rounded-full"></div>
-                  <span className="text-sm font-bold tracking-tighter">GBS Finance</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-white"></div>
-                  <span className="text-sm font-bold tracking-tighter">LION BIO BANK</span>
-                </div>
-                <div className="border-2 border-white px-3 py-1 text-xs font-black tracking-widest">R C R</div>
+               {/* Mockup SVG Logos */}
+               <div className="flex items-center gap-2">
+                 <div className="w-8 h-8 border-2 border-white rounded-sm flex items-center justify-center font-bold italic">G</div>
+                 <span className="text-sm font-bold tracking-tighter">CyberAI</span>
+               </div>
+               <div className="flex items-center gap-2">
+                 <div className="w-8 h-8 border-2 border-dashed border-white rounded-full"></div>
+                 <span className="text-sm font-bold tracking-tighter">GBS Finance</span>
+               </div>
+               <div className="flex items-center gap-2">
+                 <div className="w-8 h-8 bg-white"></div>
+                 <span className="text-sm font-bold tracking-tighter">LION BIO BANK</span>
+               </div>
+               <div className="border-2 border-white px-3 py-1 text-xs font-black tracking-widest">R C R</div>
              </div>
           </div>
         </div>
@@ -473,9 +476,9 @@ export default RenovationHero;`,
 export default Hero;`,
   },
   {
-    id: "5",
-    image: hero5,
+    id: "6",
     category: "Hero",
+    image: hero6,
     code: `import { Instagram, Youtube, Facebook } from 'lucide-react';
 
 const Hero = () => {
@@ -551,5 +554,399 @@ const Hero = () => {
 
 export default Hero;`,
   },
-];
+  {
+    id: "7",
+    category: "Hero",
+    image: hero7,
+    code: `import React from 'react';
 
+const ComingSoonPage = () => {
+  return (
+    // The main container uses a background image. Replace the URL with your specific rock/cave asset.
+    <div 
+      className="relative min-h-screen w-full flex flex-col justify-between font-sans text-white bg-cover bg-center bg-no-repeat"
+      style={{ 
+        backgroundImage: "url('https://images.unsplash.com/photo-1516410529446-2c777cb7366d?q=80&w=2000&auto=format&fit=crop')",
+        // Adding a subtle overlay to ensure text remains readable against various backgrounds
+        boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.3)" 
+      }}
+    >
+      {/* Header */}
+      <header className="px-8 py-6">
+        <a href="#" className="text-sm tracking-widest hover:opacity-70 transition-opacity uppercase font-medium">
+          Home
+        </a>
+      </header>
+
+      {/* Main Content */}
+      <main className="flex-grow flex flex-col items-center justify-center px-4 w-full">
+        {/* Title */}
+        <h1 className="text-6xl md:text-[8rem] leading-none font-light tracking-tight text-center mb-16 md:mb-24 drop-shadow-lg">
+          COMING <br /> SOON
+        </h1>
+
+        {/* Subscription Form Area */}
+        <div className="w-full max-w-md flex flex-col items-center">
+          <h2 className="text-sm md:text-base tracking-[0.3em] uppercase mb-8 font-medium drop-shadow-md">
+            Be First In Line
+          </h2>
+
+          <form className="w-full" onSubmit={(e) => e.preventDefault()}>
+            {/* Email Input */}
+            <div className="w-full mb-6">
+              <label htmlFor="email" className="block text-xs mb-2 opacity-90 pl-1">
+                Email *
+              </label>
+              <input 
+                type="email" 
+                id="email"
+                required
+                className="w-full bg-transparent border-b border-white/60 py-2 pl-1 text-white focus:outline-none focus:border-white focus:ring-0 transition-colors placeholder-white/30"
+              />
+            </div>
+
+            {/* Checkbox and Submit Button */}
+            <div className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-4 mt-2">
+              <label className="flex items-center gap-3 text-xs md:text-sm cursor-pointer group opacity-90 hover:opacity-100 transition-opacity">
+                <input 
+                  type="checkbox" 
+                  className="w-4 h-4 bg-transparent border border-white rounded-sm checked:bg-white checked:text-black focus:ring-0 focus:ring-offset-0 cursor-pointer appearance-none relative before:content-['✓'] before:absolute before:text-black before:opacity-0 checked:before:opacity-100 before:left-[2px] before:-top-[2px] before:text-sm" 
+                  required
+                />
+                <span>Yes, Subscribe Me To Your Newsletter.</span>
+              </label>
+
+              <button 
+                type="submit"
+                className="bg-white text-black px-8 py-2.5 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors w-full sm:w-auto"
+              >
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-black text-[#a0a0a0] py-4 px-6 md:px-12 text-[10px] md:text-xs flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+        <div className="flex gap-2">
+          <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+          <span>|</span>
+          <a href="#" className="hover:text-white transition-colors">Accessibility Statement</a>
+        </div>
+        
+        <div className="flex gap-2 justify-center flex-wrap">
+          <a href="#" className="hover:text-white transition-colors">Instagram</a>
+          <span>|</span>
+          <a href="#" className="hover:text-white transition-colors">YouTube</a>
+          <span>|</span>
+          <a href="#" className="hover:text-white transition-colors">Facebook</a>
+          <span>|</span>
+          <a href="#" className="hover:text-white transition-colors">TikTok</a>
+        </div>
+
+        <div>
+          © 2035 By Nowaday. Powered And Secured By Wix
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default ComingSoonPage;`,
+  },
+  {
+    id: "8",
+    category: "Hero",
+    image: hero8,
+    code: `import React from 'react';
+
+const Hero = () => {
+  return (
+    <div className="relative min-h-screen w-full bg-[#0a0a0a] text-[#f4eedb] overflow-hidden flex flex-col font-sans">
+      
+      {/* Background Cinematic Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
+        style={{ 
+          // A placeholder image of a camera operator/silhouette to match the cinematic vibe
+          backgroundImage: "url('https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=2000&auto=format&fit=crop')",
+        }}
+      ></div>
+
+      {/* Gradient overlays for readability and mood */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70"></div>
+
+      {/* Main Content Wrapper */}
+      <div className="relative z-10 flex flex-col h-screen p-6 md:p-10">
+        
+        {/* Navigation */}
+        <header className="flex justify-between items-center text-xs md:text-sm font-semibold tracking-widest uppercase">
+          <div className="flex items-center gap-3">
+            {/* Sun/Starburst Icon */}
+            <svg 
+              viewBox="0 0 24 24" 
+              fill="currentColor" 
+              className="w-5 h-5 md:w-6 md:h-6"
+            >
+              <path d="M12 2L13.5 9L20.5 7L16 12.5L20.5 18L13.5 16L12 23L10.5 16L3.5 18L8 12.5L3.5 7L10.5 9L12 2Z" />
+            </svg>
+            <span>Production House</span>
+          </div>
+          
+          <nav className="flex gap-6 md:gap-10">
+            <a href="#" className="hover:opacity-70 transition-opacity">About</a>
+            <a href="#" className="hover:opacity-70 transition-opacity">Contact</a>
+          </nav>
+        </header>
+
+        {/* Massive Title */}
+        <div className="w-full flex justify-center mt-6 md:mt-2">
+          {/* Using inline styles for specific condensed font-family to mimic the image */}
+          <h1 
+            className="text-[14vw] leading-[0.85] tracking-tight text-center w-full"
+            style={{ 
+              fontFamily: '"Bebas Neue", "Anton", "Impact", sans-serif',
+              transform: 'scaleY(1.1)' // Slight vertical stretch to match the reference
+            }}
+          >
+            CREATIVE FILMMAKING
+          </h1>
+        </div>
+
+        {/* Spacer to push content to the bottom */}
+        <div className="flex-grow"></div>
+
+        {/* Bottom Right Information Box */}
+        <div className="self-end w-full max-w-sm md:max-w-md pb-4 md:pb-8 pr-2">
+          <p className="text-sm md:text-base font-medium leading-relaxed mb-6 opacity-95">
+            We specialize in pre- and post-production services, ensuring your films and commercials stand out with exceptional quality and creativity.
+          </p>
+          
+          <button className="w-full md:w-auto border border-[#f4eedb] text-[#f4eedb] px-10 py-3.5 text-sm tracking-widest hover:bg-[#f4eedb] hover:text-[#0a0a0a] transition-all duration-300 backdrop-blur-sm bg-black/10">
+            Explore Services
+          </button>
+        </div>
+
+      </div>
+    </div>
+  );
+};
+
+export default Hero;`,
+  },
+  {
+    id: "9",
+    category: "Hero",
+    image: hero9,
+    code: `const Hero = () => {
+  return (
+    // Main container with dark background and slight padding to frame the inner image
+    <div className="min-h-screen bg-[#1a1a1a] text-white font-sans flex flex-col px-4 pb-4 pt-2">
+
+      {/* Header / Navbar */}
+      <header className="flex justify-between items-center px-4 py-4 text-xs tracking-wide">
+        <div className="font-medium tracking-widest">
+          A. Roberts
+        </div>
+        
+        <nav className="hidden md:flex gap-10 opacity-80">
+          <a href="#" className="hover:text-[#f7e8a4] transition-colors">Shop All</a>
+          <a href="#" className="hover:text-[#f7e8a4] transition-colors">About Us</a>
+          <a href="#" className="hover:text-[#f7e8a4] transition-colors">Contact Us</a>
+        </nav>
+
+        <div className="flex gap-6 items-center opacity-80">
+          <a href="#" className="hover:text-[#f7e8a4] transition-colors">Log In</a>
+          {/* Shopping Cart SVG Icon */}
+          <button className="hover:text-[#f7e8a4] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      {/* Massive Main Title */}
+      <div className="w-full text-center py-2 md:py-6">
+        <h1 
+          className="text-[13vw] md:text-[9rem] leading-none text-[#f7e8a4] tracking-tight uppercase"
+          style={{ fontFamily: '"Playfair Display", "Times New Roman", serif' }}
+        >
+          Grooming Mastery
+        </h1>
+      </div>
+
+      {/* Hero Image Section */}
+      <div className="relative flex-grow w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden mt-4">
+        {/* Unsplash Placeholder Image */}
+        <img 
+          src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=2000&auto=format&fit=crop" 
+          alt="Barber grooming a client with clippers" 
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        
+        {/* Dark gradient overlay to make the bottom-left text readable */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+        {/* Overlay Content Box (Bottom Left) */}
+        <div className="absolute bottom-8 left-6 md:bottom-16 md:left-12 max-w-sm text-white z-10 pr-4">
+          <h3 className="text-[10px] md:text-xs font-medium mb-3 tracking-widest uppercase opacity-90">
+            Grooming Mastery
+          </h3>
+          <p className="text-sm md:text-base leading-relaxed mb-6 font-light text-gray-200">
+            Explore our curated selection of clippers, trimmers, and grooming essentials. Elevate your grooming routine with our premium tools and accessories.
+          </p>
+          <button className="bg-[#f7e8a4] text-black px-8 py-2.5 rounded-full text-sm font-semibold hover:bg-white transition-colors duration-300">
+            Shop Now
+          </button>
+        </div>
+      </div>
+
+    </div>
+  );
+};
+
+export default Hero;`,
+  },
+  {
+    id: "10",
+    category: "Hero",
+    image: hero10,
+    code: `import React from 'react';
+    
+    const Hero = () => {
+      // Sample product data to map through for the collection grid
+      const products = [
+        { id: 1, name: "Purple Swirl Cap", image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=500&q=80" },
+        { id: 2, name: "Maroon Leaf Cap", image: "https://images.unsplash.com/photo-1556306535-0f09a536f01f?auto=format&fit=crop&w=500&q=80" },
+        { id: 3, name: "Black Pattern Cap", image: "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?auto=format&fit=crop&w=500&q=80" },
+        { id: 4, name: "Teal Leaf Cap", image: "https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=500&q=80" }
+      ];
+    
+      return (
+        <div className="min-h-screen bg-white font-sans text-[#111]">
+          
+          {/* Top Promotional Bar */}
+          <div className="w-full bg-[#1a1a1a] text-white text-center py-1.5 md:py-2 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">
+            Free Shipping Worldwide
+          </div>
+    
+          {/* Navigation Header */}
+          <header className="flex justify-between items-center px-4 md:px-8 py-4 bg-white">
+            
+            {/* Logo */}
+            <div className="flex flex-col cursor-pointer">
+              <div className="flex items-start">
+                <span className="text-3xl font-black tracking-tighter leading-none" style={{ fontFamily: '"Impact", "Arial Black", sans-serif' }}>RAW</span>
+                <span className="text-[10px] font-bold mt-1 ml-0.5 tracking-tighter">ETC</span>
+              </div>
+              {/* Subtle underline for the RAW text as seen in reference */}
+              <div className="w-10 h-1 bg-black mt-1"></div>
+            </div>
+    
+            {/* Right Navigation Elements */}
+            <div className="flex items-center gap-4 md:gap-6">
+              
+              {/* Search Bar (Hidden on mobile) */}
+              <div className="hidden md:flex items-center gap-2 text-gray-400 text-xs font-semibold cursor-text">
+                <span>Search...</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+              </div>
+    
+              {/* Cart */}
+              <div className="hidden md:block text-xs font-bold cursor-pointer">
+                CART (0)
+              </div>
+    
+              {/* Icons Array */}
+              <div className="flex items-center gap-3 md:gap-4">
+                {/* Notification Bell */}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 cursor-pointer">
+                  <path fillRule="evenodd" d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z" clipRule="evenodd" />
+                </svg>
+                
+                {/* User Profile / Dropdown */}
+                <div className="flex items-center gap-1 cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                    <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clipRule="evenodd" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3 h-3">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </div>
+    
+                {/* Hamburger Menu */}
+                <div className="flex flex-col gap-[4px] cursor-pointer ml-2">
+                  <span className="w-6 h-[2px] bg-black"></span>
+                  <span className="w-6 h-[2px] bg-black"></span>
+                  <span className="w-6 h-[2px] bg-black"></span>
+                </div>
+              </div>
+            </div>
+          </header>
+    
+          {/* Hero Section */}
+          <main className="relative w-full h-[350px] md:h-[500px] lg:h-[600px] overflow-hidden">
+            {/* Hero Background Image */}
+            <img 
+              src="https://plus.unsplash.com/premium_photo-1759685060765-2ef6291ff9ef?q=80&w=1221&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+              alt="Streetwear model with cap" 
+              className="absolute inset-0 w-full h-full object-cover object-top"
+            />
+            
+            {/* Dark Overlay for Text Readability */}
+            <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center px-4">
+              <h1 
+                className="text-white text-5xl md:text-7xl lg:text-[6rem] font-black uppercase leading-none tracking-tight drop-shadow-lg"
+                style={{ fontFamily: '"Impact", "Oswald", "Arial Black", sans-serif' }}
+              >
+                Always Be <br /> Original
+              </h1>
+              
+              <p className="text-white text-xs md:text-sm font-bold tracking-[0.25em] uppercase mt-4 mb-8 drop-shadow-md">
+                New Arrivals Are Here
+              </p>
+              
+              {/* Ghost Button */}
+              <button className="border border-white text-white px-8 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors duration-300 backdrop-blur-sm bg-black/10">
+                Shop Now
+              </button>
+            </div>
+          </main>
+    
+          {/* Limited Edition Collection Section */}
+          <section className="py-12 md:py-20 px-4 md:px-8 max-w-7xl mx-auto">
+            <h2 
+              className="text-center text-lg md:text-2xl font-black uppercase tracking-[0.15em] mb-12"
+              style={{ fontFamily: '"Impact", "Oswald", sans-serif' }}
+            >
+              Limited Edition Collection
+            </h2>
+    
+            {/* Product Grid */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
+              {products.map((product) => (
+                <div key={product.id} className="group cursor-pointer flex flex-col items-center">
+                  {/* Image Container with subtle hover scale */}
+                  <div className="w-full aspect-square overflow-hidden bg-gray-50 flex items-center justify-center p-4 mb-4">
+                    <img 
+                      src={product.image} 
+                      alt={product.name} 
+                      className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+    
+        </div>
+      );
+    };
+    
+    export default Hero;`,
+  },
+];
