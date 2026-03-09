@@ -14,6 +14,7 @@ import Mypages from "./pages/Mypages";
 import PageDetails from "./pages/PageDetails";
 import { heroes } from "./data/herodata";
 import Pages from "./pages/Pages";
+import { components } from "./data/pages";
 
 const queryClient = new QueryClient();
 
@@ -32,7 +33,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
           <Route path="/hero" element={<Hero />} />
           <Route path="/mypages" element={<Mypages />} />
-          <Route path="/hero/:id" element={<PageDetails heroes={heroes} />} />
+          <Route path="/pages/:id" element={<PageDetails  />} />
           <Route path="/pages" element={<Pages />} />
         </Routes>
       </BrowserRouter>

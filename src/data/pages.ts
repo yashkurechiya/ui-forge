@@ -5,7 +5,7 @@ import hero4 from "/assets/hero4.png";
 import hero5 from "/assets/hero5.png";
 
 export interface PageComponent {
-  id: number;
+  id: string;
   image:string;
   category: string;
   code: string;
@@ -19,7 +19,7 @@ export const components: PageComponent[] = [
  
     
   {
-    id: 1,
+    id: "1",
     category: "Hero",
     image: hero1,
     code: `const Hero = () => {
@@ -119,7 +119,7 @@ export default Hero;
 `,
   },
   {
-    id: 3,
+    id: "3",
     image: hero2,
     category: "Hero",
     code: `import { HeartOff } from 'lucide-react';
@@ -213,7 +213,7 @@ export default Hero;
     export default Hero;`,
   },
   {
-    id: 2,
+    id: "2",
     image: hero3,
     category: "Hero",
     code: `import React from 'react';
@@ -292,7 +292,7 @@ const Hero = () => {
 export default Hero;`,
   },
   {
-    id: 4,
+    id: "4",
     image: hero4,
     category: "Hero",
     code: `const RenovationHero = () => {
@@ -383,7 +383,7 @@ export default Hero;`,
 export default RenovationHero;`,
   },
   {
-    id: 5,
+    id: "5",
     image: hero5,
     category: "Hero",
     code: `const Hero = () => {
@@ -473,7 +473,7 @@ export default RenovationHero;`,
 export default Hero;`,
   },
   {
-    id: 5,
+    id: "5",
     image: hero5,
     category: "Hero",
     code: `import { Instagram, Youtube, Facebook } from 'lucide-react';

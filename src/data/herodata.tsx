@@ -7,7 +7,7 @@ import hero5 from "/assets/hero5.png";
 
 export const heroes = [
   {
-    id: 1,
+    id: "1",
     image: hero1,
     code: `const Hero = () => {
   return (
@@ -106,7 +106,7 @@ export default Hero;
 `,
   },
   {
-    id: 3,
+    id: "3",
     image: hero2,
     code: `import { HeartOff } from 'lucide-react';
     import React from 'react';
@@ -199,7 +199,7 @@ export default Hero;
     export default Hero;`,
   },
   {
-    id: 2,
+    id: "2",
     image: hero3,
     code: `import React from 'react';
 import { ShoppingBag, User, Menu, ArrowUpRight } from 'lucide-react';
