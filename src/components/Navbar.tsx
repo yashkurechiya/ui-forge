@@ -19,9 +19,7 @@ export const Navbar = () => {
 
         {/* Logo */}
         <Link to={'/'}>
-          <div>
-            Panele
-          </div>
+        <img src="/logo.png" alt="" className="w-12 h-15" />
         </Link>
 
         {/* Right Side */}

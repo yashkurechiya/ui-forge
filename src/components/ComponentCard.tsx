@@ -3,9 +3,9 @@ import { ArrowRight } from "lucide-react";
 import type { UIComponent } from "@/data/components";
 
 export const ComponentCard = ({ component }: { component: UIComponent }) => (
+  <div className="group rounded-xl border bg-black  p-5 transition-all hover:shadow-md hover:border-primary/20">
   <Link
     to={`/components/${component.id}`}
-    className="group rounded-xl border bg-card p-5 transition-all hover:shadow-md hover:border-primary/20"
   >
     <div className="mb-4 rounded-lg bg-secondary/60 p-6 flex items-center justify-center min-h-[120px]">
       <span className="font-mono text-xs text-muted-foreground">{`<${component.name.replace(/\s/g, "")} />`}</span>
@@ -21,4 +21,5 @@ export const ComponentCard = ({ component }: { component: UIComponent }) => (
       {component.category}
     </span>
   </Link>
+  </div>
 );

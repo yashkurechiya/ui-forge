@@ -1,4 +1,9 @@
-import hero1 from "/assets/hero1.png"
+import hero1 from "/assets/hero1.png";
+import hero2 from "/assets/hero2.png";
+import hero3 from "/assets/hero3.png";
+import hero4 from "/assets/hero4.png";
+import hero5 from "/assets/hero5.png";
+
 
 export const heroes = [
   {
@@ -102,7 +107,7 @@ export default Hero;
   },
   {
     id: 3,
-    image: "/assets/hero3.png",
+    image: hero2,
     code: `import { HeartOff } from 'lucide-react';
     import React from 'react';
     
@@ -195,7 +200,7 @@ export default Hero;
   },
   {
     id: 2,
-    image: "/assets/hero2.png",
+    image: hero3,
     code: `import React from 'react';
 import { ShoppingBag, User, Menu, ArrowUpRight } from 'lucide-react';
 
@@ -273,7 +278,7 @@ export default Hero;`,
   },
   {
     id: 4,
-    image: "/assets/hero4.png",
+    image: hero4,
     code: `const RenovationHero = () => {
   return (
     <div className="relative min-h-screen w-full bg-zinc-900 font-sans text-white overflow-hidden">
@@ -363,7 +368,7 @@ export default RenovationHero;`,
   },
   {
     id: 5,
-    image: "/assets/hero5.png",
+    image: hero5,
     code: `const Hero = () => {
   return (
     <div className="relative min-h-screen w-full bg-black font-sans text-white overflow-hidden">
@@ -451,8 +456,8 @@ export default RenovationHero;`,
 export default Hero;`,
   },
   {
-    id: 6,
-    image: "/assets/hero6.png",
+    id: 5,
+    image: hero5,
     code: `import { Instagram, Youtube, Facebook } from 'lucide-react';
 
 const Hero = () => {

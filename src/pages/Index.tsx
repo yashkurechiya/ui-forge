@@ -90,6 +90,7 @@ const Index = () => {
 
             {/* Top Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black to-black"></div>
 
             <div className="relative z-10 container mx-auto px-6">
 
@@ -148,7 +149,9 @@ const Index = () => {
 
 
           {/* FEATURED COMPONENTS */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black to-black"></div>
           <section className="relative z-10 container py-16">
+            
 
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-2xl font-bold">Featured Components</h2>
