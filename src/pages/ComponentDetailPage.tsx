@@ -59,33 +59,6 @@ const ComponentDetailPage = () => {
           </div>
         </div>
 
-        {/* Props */}
-        {component.props.length > 0 && (
-          <div className="mt-10">
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">Props</h2>
-            <div className="rounded-lg border overflow-hidden">
-              <table className="w-full text-sm">
-                <thead className="bg-secondary/50">
-                  <tr>
-                    <th className="text-left px-4 py-2.5 font-medium">Prop</th>
-                    <th className="text-left px-4 py-2.5 font-medium">Type</th>
-                    <th className="text-left px-4 py-2.5 font-medium">Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {component.props.map((prop) => (
-                    <tr key={prop.name} className="border-t">
-                      <td className="px-4 py-2.5 font-mono text-xs text-primary">{prop.name}</td>
-                      <td className="px-4 py-2.5 font-mono text-xs text-muted-foreground">{prop.type}</td>
-                      <td className="px-4 py-2.5 text-muted-foreground">{prop.description}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
-
         {/* Usage */}
         <div className="mt-10">
           <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">Example Usage</h2>

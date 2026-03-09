@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import type { UIComponent } from "@/data/components";
 
 export const ComponentCard = ({ component }: { component: UIComponent }) => (
-  <div className="group rounded-xl border bg-black  p-5 transition-all hover:shadow-md hover:border-primary/20">
+  <div className="group rounded-xl   bg-black  p-5 transition-all hover:border">
   <Link
     to={`/components/${component.id}`}
   >

@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Search, Github, Code2 } from "lucide-react";
+import { Search, Github, LayoutGrid, FileText, Blocks, ArrowDownToLine } from "lucide-react";
 import { useState } from "react";
 
 export const Navbar = () => {
@@ -10,79 +10,71 @@ export const Navbar = () => {
     location.pathname === path || location.pathname.startsWith(path + "/");
 
   const linkClass = (path: string) =>
-    `text-sm font-medium transition-colors ${isActive(path) ? "text-primary" : "text-muted-foreground hover:text-foreground"
+    `flex items-center gap-2 text-sm font-medium transition-all duration-200 ${isActive(path) ? "text-blue-500" : "text-slate-600 hover:text-blue-500"
     }`;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-gradient-to-r from-black via-black to-blue-600 backdrop-blur-xl">
-      <div className="container mx-auto flex h-16 items-center justify-between px-6">
+    // Outer container: centered, floating, and fixed
+    <header className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+      <div className="container max-w-6xl pointer-events-auto">
+        {/* The "Pill" - Glassmorphism style */}
+        <div className="flex h-14 items-center justify-between rounded-xl border border-white/10 bg-black px-6 shadow-lg backdrop-blur-md">
 
-        {/* Logo */}
-        <Link to={'/'}>
-        <img src="/logo.png" alt="" className="w-12 h-15" />
-        </Link>
+          {/* Logo & Brand */}
+          <div className="flex items-center gap-2">
+            <Link to={'/'} className="flex items-center gap-2">
+              <img src="/logo.png" alt="Panele" className="h-8 w-auto" />
+            </Link>
+          </div>
 
-        {/* Right Side */}
-        <div className="flex items-center gap-3">
+          <nav className="hidden md:flex text-white items-center gap-8 text-sm">
 
-          {/* Search */}
+
+
+            <Link
+
+              to="/components"
+
+              className={`${linkClass("/components")} text-gray-100 hover:text-white transition`}
+
+            >
+<h2 className="text-gray-200">Components</h2>
+
+            </Link>
+
+            <Link
+
+              to="/pages"
+
+              className={`${linkClass("/pages")} text-gray-100 hover:text-white transition`}
+            >
+              <h2 className="text-gray-200">Pages</h2>
+            </Link>
+            <Link
+              to="/templates"
+              className={`${linkClass("/templates")} text-gray-100 hover:text-white transition`}>
+              <h2 className="text-gray-200">Templates</h2>
+            </Link>
+          </nav>
+
+          {/* Center Navigation */}
           <div className="hidden sm:flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 backdrop-blur-md">
 
             <Search className="h-4 w-4 text-gray-400" />
-
             <input
               type="text"
+
               placeholder="Search components..."
+
               value={searchQuery}
+
               onChange={(e) => setSearchQuery(e.target.value)}
+
               className="bg-transparent text-sm text-white outline-none placeholder:text-gray-400 w-44"
+
             />
-
           </div>
-          <div className="flex items-center gap-10">
-          </div>
-          <div>
-
-            {/* Navigation */}
-            <nav className="hidden md:flex items-center gap-8 text-sm">
-
-              <Link
-                to="/components"
-                className={`${linkClass("/components")} text-gray-100 hover:text-white transition`}
-              >
-                Components
-              </Link>
-              <Link
-                to="/mypages"
-                className={`${linkClass("/mypages")} text-gray-100 hover:text-white transition`}
-              >
-                Pages
-              </Link>
-
-              <Link
-                to="/templates"
-                className={`${linkClass("/templates")} text-gray-100 hover:text-white transition`}
-              >
-                Templates
-              </Link>
-
-            </nav>
-
-          </div>
-
-
-          {/* Github Button */}
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-lg border border-white/10 bg-white/5 p-2 text-gray-300 hover:text-white hover:bg-white/10 transition"
-          >
-            <Github className="h-4 w-4" />
-          </a>
-
         </div>
-
       </div>
     </header>
   );

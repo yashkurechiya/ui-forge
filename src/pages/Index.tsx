@@ -34,7 +34,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black"></div>
 
           {/* Content */}
-          <div className="relative z-20 container mx-auto px-6">
+          <div className="relative z-20 container mx-auto mt-20 px-6">
 
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border bg-secondary/90 px-3 py-1 text-xs font-medium text-muted-foreground">
               <Sparkles className="h-3 w-3 text-primary" />
@@ -90,58 +90,53 @@ const Index = () => {
 
             {/* Top Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black to-black"></div>
+            {/* <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black to-black"></div> */}
 
-            <div className="relative z-10 container mx-auto px-6">
+            <div className="bg-zic-500 relative z-10 py-20 borde border-gray-100">
+              <div className="container mx-auto px-6 max-w-6xl">
+                {/* Clean, Three-Column Grid */}
+                <div className="grid md:grid-cols-3 divide-x divide-gray-100 text-center">
 
-              {/* Title */}
-              <h2 className="text-center text-4xl font-bold mb-16">
-                How It Works
-              </h2>
-
-              {/* Steps */}
-              <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-                {[
-                  {
-                    icon: Eye,
-                    title: "Preview",
-                    desc: "Browse and preview components with live examples.",
-                  },
-                  {
-                    icon: Copy,
-                    title: "Copy Code",
-                    desc: "Grab the React + Tailwind code with one click.",
-                  },
-                  {
-                    icon: Zap,
-                    title: "Use in Project",
-                    desc: "Paste into your project and customize to fit.",
-                  },
-                ].map((step, i) => (
-                  <div
-                    key={i}
-                    className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-10 text-center transition hover:border-white/20 hover:bg-white/10"
-                  >
-
-                    {/* Icon */}
-                    <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-white/10">
-                      <step.icon className="h-6 w-6 text-white" />
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-lg font-semibold mb-3">
-                      {step.title}
+                  {/* Coded Elements Stat */}
+                  <div className="px-10 flex flex-col items-center">
+                    <h2 className="text-5xl font-extrabold text-blue-600 mb-4 tracking-tight">
+                      70+
+                    </h2>
+                    <h3 className="text-xl font-bold text-slate-800 mb-3">
+                      Coded Elements
                     </h3>
-
-                    {/* Description */}
-                    <p className="text-sm text-gray-300 leading-relaxed">
-                      {step.desc}
+                    <p className="text-gray-500 text-sm leading-relaxed max-w-[250px]">
+                      From buttons, to inputs, navbars, alerts or cards, you are covered
                     </p>
-
                   </div>
-                ))}
 
+                  {/* Design Blocks Stat */}
+                  <div className="px-10 flex flex-col items-center border-x border-gray-100">
+                    <h2 className="text-5xl font-extrabold text-blue-600 mb-4 tracking-tight">
+                      15+
+                    </h2>
+                    <h3 className="text-xl font-bold text-slate-800 mb-3">
+                      Design Blocks
+                    </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed max-w-[250px]">
+                      Mix the sections, change the colors and unleash your creativity
+                    </p>
+                  </div>
+
+                  {/* Pages Stat */}
+                  <div className="px-10 flex flex-col items-center">
+                    <h2 className="text-5xl font-extrabold text-blue-600 mb-4 tracking-tight">
+                      4
+                    </h2>
+                    <h3 className="text-xl font-bold text-slate-800 mb-3">
+                      Pages
+                    </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed max-w-[250px]">
+                      Save 3-4 weeks of work when you use our pre-made pages for your website
+                    </p>
+                  </div>
+
+                </div>
               </div>
             </div>
 
@@ -151,10 +146,10 @@ const Index = () => {
           {/* FEATURED COMPONENTS */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black to-black"></div>
           <section className="relative z-10 container py-16">
-            
+
 
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-2xl font-bold">Featured Components</h2>
+              <h2 className="text-2xl font-bold">Featured Pages</h2>
 
               <Link
                 to="/components"

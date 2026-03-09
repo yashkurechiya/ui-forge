@@ -13,6 +13,7 @@ import Hero from "./pages/Hero";
 import Mypages from "./pages/Mypages";
 import PageDetails from "./pages/PageDetails";
 import { heroes } from "./data/herodata";
+import Pages from "./pages/Pages";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/hero" element={<Hero />} />
           <Route path="/mypages" element={<Mypages />} />
           <Route path="/hero/:id" element={<PageDetails heroes={heroes} />} />
+          <Route path="/pages" element={<Pages />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

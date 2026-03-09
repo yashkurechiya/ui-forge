@@ -66,6 +66,10 @@
   }
 }
 
+h2{
+  font-family: 'JetBrains Mono', sans-serif;
+}
+
 @layer utilities {
   .font-mono {
     font-family: 'JetBrains Mono', ui-monospace, monospace;

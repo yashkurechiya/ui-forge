@@ -4,58 +4,82 @@ export interface UIComponent {
   description: string;
   category: string;
   code: string;
-  props: { name: string; type: string; description: string }[];
 }
 
 export const categories = [
-  "Buttons", "Cards", "Forms", "Navigation", "Layout", "Modals", "Inputs", "Animations"
+  "Hero", "Login", "Navbar", "Footer", "Form", "Testimonials", "Grid Design", "About", "Contact Us"
 ];
 
 export const components: UIComponent[] = [
-  {
-    id: "primary-button",
-    name: "Primary Button",
-    description: "A versatile primary action button with hover and focus states.",
-    category: "Buttons",
-    code: `import React from "react";
+ {
+  id: "official-hero-section",
+  name: "Hero Pages",
+  description: "High-impact landing sections featuring official branding, emergency alerts, and primary call-to-action for citizens.",
+  category: "Layouts",
+  code: `import React from "react";
+import { ArrowRight, AlertCircle } from "lucide-react";
 
-interface ButtonProps {
-  children: React.ReactNode;
-  onClick?: () => void;
-  variant?: "primary" | "secondary" | "outline";
-  size?: "sm" | "md" | "lg";
-}
-
-export const Button = ({
-  children,
-  onClick,
-  variant = "primary",
-  size = "md",
-}: ButtonProps) => {
-  const base = "rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2";
-  const variants = {
-    primary: "bg-indigo-600 text-white hover:bg-indigo-700 focus:ring-indigo-500",
-    secondary: "bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-400",
-    outline: "border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 focus:ring-indigo-500",
-  };
-  const sizes = {
-    sm: "px-3 py-1.5 text-sm",
-    md: "px-4 py-2 text-base",
-    lg: "px-6 py-3 text-lg",
-  };
-
+export const HeroSection = () => {
   return (
-    <button onClick={onClick} className={\`\${base} \${variants[variant]} \${sizes[size]}\`}>
-      {children}
-    </button>
+    <div className="relative min-h-[600px] flex items-center bg-slate-900 overflow-hidden">
+      {/* Cityscape Background with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1570160897040-30430aac2280?auto=format&fit=crop&q=80&w=2000" 
+          className="w-full h-full object-cover opacity-40"
+          alt="Smart City"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+        {/* Left Content */}
+        <div className="space-y-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium">
+            <AlertCircle size={16} />
+            <span>Digital India Initiative</span>
+          </div>
+          
+          <h1 className="text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+            Smart Urban <span className="text-blue-500">Governance</span> Platform
+          </h1>
+          
+          <p className="text-lg text-slate-300 max-w-lg">
+            "Your Digital Bridge to Transparent Municipal Administration." Register complaints, track resolutions, and pay taxes seamlessly.
+          </p>
+
+          <div className="flex flex-wrap gap-4">
+            <button className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white rounded-xl font-bold flex items-center gap-2 transition-all transform hover:scale-105 shadow-lg shadow-red-600/20">
+              Register Complaint <ArrowRight size={20} />
+            </button>
+            <button className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-xl font-bold backdrop-blur-md transition-all">
+              Explore Services
+            </button>
+          </div>
+        </div>
+
+        {/* Right Content: Mayor/Official Highlight */}
+        <div className="hidden lg:flex justify-end">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl max-w-sm text-center">
+            <div className="w-32 h-32 mx-auto mb-6 rounded-full border-4 border-orange-500 p-1">
+              <img 
+                src="https://via.placeholder.com/150" 
+                className="w-full h-full rounded-full object-cover"
+                alt="Mayor"
+              />
+            </div>
+            <h3 className="text-xl font-bold text-white mb-1">Mr. Pushyamitra Bhargav</h3>
+            <p className="text-orange-500 text-sm font-bold mb-4 uppercase tracking-widest">Mayor, IMC Indore</p>
+            <p className="text-slate-400 italic text-sm leading-relaxed">
+              "Our city has achieved unparalleled successes which are the result of your hard work and collective effort."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };`,
-    props: [
-      { name: "variant", type: '"primary" | "secondary" | "outline"', description: "Visual style of the button" },
-      { name: "size", type: '"sm" | "md" | "lg"', description: "Size of the button" },
-      { name: "onClick", type: "() => void", description: "Click handler function" },
-    ],
-  },
+},
   {
     id: "info-card",
     name: "Info Card",
@@ -74,11 +98,7 @@ export const InfoCard = ({ title, description, image }: CardProps) => (
     <p className="mt-2 text-sm text-gray-500">{description}</p>
   </div>
 );`,
-    props: [
-      { name: "title", type: "string", description: "Card title" },
-      { name: "description", type: "string", description: "Card description" },
-      { name: "image", type: "string", description: "Optional image URL" },
-    ],
+    
   },
   {
     id: "text-input",
@@ -108,11 +128,7 @@ export const TextInput = ({ label, placeholder, error, value, onChange }: InputP
     {error && <span className="text-xs text-red-500">{error}</span>}
   </div>
 );`,
-    props: [
-      { name: "label", type: "string", description: "Input label text" },
-      { name: "error", type: "string", description: "Error message to display" },
-      { name: "placeholder", type: "string", description: "Placeholder text" },
-    ],
+    
   },
   {
     id: "contact-form",
@@ -128,7 +144,7 @@ export const TextInput = ({ label, placeholder, error, value, onChange }: InputP
     <button className="w-full rounded-lg bg-indigo-600 py-2 text-white font-medium hover:bg-indigo-700 transition">Send Message</button>
   </form>
 );`,
-    props: [],
+     
   },
   {
     id: "navbar",
@@ -146,7 +162,7 @@ export const TextInput = ({ label, placeholder, error, value, onChange }: InputP
     </div>
   </nav>
 );`,
-    props: [],
+   
   },
   {
     id: "modal-dialog",
@@ -174,11 +190,7 @@ export const Modal = ({ open, onClose, title, children }: ModalProps) => {
     </div>
   );
 };`,
-    props: [
-      { name: "open", type: "boolean", description: "Controls modal visibility" },
-      { name: "onClose", type: "() => void", description: "Called when modal is dismissed" },
-      { name: "title", type: "string", description: "Modal title" },
-    ],
+     
   },
   {
     id: "two-column-layout",
@@ -196,10 +208,7 @@ export const TwoColumnLayout = ({ left, right }: TwoColProps) => (
     <div>{right}</div>
   </div>
 );`,
-    props: [
-      { name: "left", type: "ReactNode", description: "Content for left column" },
-      { name: "right", type: "ReactNode", description: "Content for right column" },
-    ],
+    
   },
   {
     id: "fade-in-animation",
@@ -219,8 +228,6 @@ export const FadeIn = ({ children, delay = 0 }: FadeInProps) => (
     {children}
   </div>
 );`,
-    props: [
-      { name: "delay", type: "number", description: "Delay in ms before animation starts" },
-    ],
+     
   },
 ];
