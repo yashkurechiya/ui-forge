@@ -37,7 +37,7 @@ export const Footer = () => (
         </div>
       </div>
       <div className="mt-10 border-t pt-6 text-center text-sm text-muted-foreground">
-        © 2026 UIForge. Built for developers, by developers.
+        © 2026 UIForge. Built by SOIT Dev
       </div>
     </div>
   </footer>
