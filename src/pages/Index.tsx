@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { ComponentCard } from "@/components/ComponentCard";
 import { TemplateCard } from "@/components/TemplateCard";
 import { templates } from "@/data/templates";
-import {  components } from "@/data/pages";
+import {  components, PageC } from "@/data/pages";
 import { categori, component } from "@/data/components";
 import { CompCard, FeaturedCard } from "@/components/FeaturedCard";
 import { PageCard } from "@/components/PagesCard";
@@ -161,7 +161,7 @@ const Index = () => {
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {components.slice(0, 4).map((c) => (
+              {PageC.slice(0, 4).map((c) => (
                 <FeaturedCard key={c.id} component={c} />
               ))}
             </div>

@@ -12,6 +12,7 @@ import Login1 from "/assets/login1.png";
 import form1 from "/assets/form1.png";
 import about1 from "/assets/about1.png";
 import Navbar1 from "/assets/Navbar1.png";
+import { Sign } from "crypto";
 
 export interface PageComponent {
   id: string;
@@ -1115,3 +1116,25 @@ export default Form;`,
 ];
 
  
+export const PageC = [
+  {
+    id: "1",
+    category: "Hero",
+    image: hero1,
+  },
+  {
+    id: "2",
+    category: "SignUp",
+    image: Login1,
+  },
+  {
+    id: "3",
+    category: "About",
+    image: about1,
+  },
+  {
+    id: "4",
+    category: "Form",
+    image: form1,
+  },
+]
