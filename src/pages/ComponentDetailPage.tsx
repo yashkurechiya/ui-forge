@@ -3,13 +3,13 @@ import { ArrowLeft } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { CodeBlock } from "@/components/CodeBlock";
-import { components } from "@/data/components";
+import { component } from "@/data/components";
 
 const ComponentDetailPage = () => {
   const { id } = useParams();
-  const component = components.find((c) => c.id === id);
+  const componen = component.find((c) => c.id === id);
 
-  if (!component) {
+  if (!componen) {
     return (
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -34,10 +34,8 @@ const ComponentDetailPage = () => {
 
         <div className="mb-6">
           <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
-            {component.category}
+            {componen.category}
           </span>
-          <h1 className="mt-3 text-3xl font-bold">{component.name}</h1>
-          <p className="mt-2 text-muted-foreground">{component.description}</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
@@ -46,7 +44,7 @@ const ComponentDetailPage = () => {
             <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">Preview</h2>
             <div className="rounded-xl border bg-secondary/30 p-8 flex items-center justify-center min-h-[250px]">
               <div className="text-center">
-                <span className="font-mono text-sm text-muted-foreground">{`<${component.name.replace(/\s/g, "")} />`}</span>
+             
                 <p className="mt-2 text-xs text-muted-foreground">Live preview placeholder</p>
               </div>
             </div>
@@ -55,20 +53,13 @@ const ComponentDetailPage = () => {
           {/* Code */}
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">Code</h2>
-            <CodeBlock code={component.code} />
+        
           </div>
         </div>
 
         {/* Usage */}
         <div className="mt-10">
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">Example Usage</h2>
-          <CodeBlock
-            code={`import { ${component.name.replace(/\s/g, "")} } from "./components/${component.name.replace(/\s/g, "")}";
-
-export default function App() {
-  return <${component.name.replace(/\s/g, "")} />;
-}`}
-          />
+          
         </div>
       </div>
       <Footer />

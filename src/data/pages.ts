@@ -8,6 +8,10 @@ import hero7 from "/assets/hero7.png";
 import hero8 from "/assets/hero8.png";
 import hero9 from "/assets/hero9.png";
 import hero10 from "/assets/hero10.png";
+import Login1 from "/assets/login1.png";
+import form1 from "/assets/form1.png";
+import about1 from "/assets/about1.png";
+import Navbar1 from "/assets/Navbar1.png";
 
 export interface PageComponent {
   id: string;
@@ -17,7 +21,7 @@ export interface PageComponent {
 }
 
 export const categories = [
-  "Hero", "Login", "Navbar", "Footer", "Form", "Testimonials", "Grid Design", "About", "Contact Us"
+  "Hero", "SignUp", "Navbar", "Footer", "Form", "Testimonials", "Grid Design", "About", "Contact Us"
 ];
 
 export const components: PageComponent[] = [
@@ -809,77 +813,46 @@ export default Hero;`,
 
 export default Hero;`,
   },
-  {
+ {
     id: "10",
     category: "Hero",
     image: hero10,
     code: `import React from 'react';
     
     const Hero = () => {
-      // Sample product data to map through for the collection grid
       const products = [
-        { id: 1, name: "Purple Swirl Cap", image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=500&q=80" },
-        { id: 2, name: "Maroon Leaf Cap", image: "https://images.unsplash.com/photo-1556306535-0f09a536f01f?auto=format&fit=crop&w=500&q=80" },
-        { id: 3, name: "Black Pattern Cap", image: "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?auto=format&fit=crop&w=500&q=80" },
-        { id: 4, name: "Teal Leaf Cap", image: "https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=500&q=80" }
+        { id: 1, name: "Purple Swirl", image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=500&q=80" },
+        { id: 2, name: "Maroon Leaf", image: "https://images.unsplash.com/photo-1556306535-0f09a536f01f?auto=format&fit=crop&w=500&q=80" },
+        { id: 3, name: "Black Pattern", image: "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?auto=format&fit=crop&w=500&q=80" },
+        { id: 4, name: "Teal Leaf", image: "https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=500&q=80" }
       ];
     
       return (
-        <div className="min-h-screen bg-white font-sans text-[#111]">
-          
-          {/* Top Promotional Bar */}
-          <div className="w-full bg-[#1a1a1a] text-white text-center py-1.5 md:py-2 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">
+        <div className="min-h-screen bg-white font-sans text-[#111] overflow-x-hidden">
+          <div className="w-full bg-[#1a1a1a] text-white text-center py-2 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">
             Free Shipping Worldwide
           </div>
     
-          {/* Navigation Header */}
-          <header className="flex justify-between items-center px-4 md:px-8 py-4 bg-white">
-            
-            {/* Logo */}
+          <header className="flex justify-between items-center px-4 md:px-8 py-4 sticky top-0 bg-white z-50">
             <div className="flex flex-col cursor-pointer">
               <div className="flex items-start">
-                <span className="text-3xl font-black tracking-tighter leading-none" style={{ fontFamily: '"Impact", "Arial Black", sans-serif' }}>RAW</span>
+                <span className="text-3xl font-black tracking-tighter leading-none">RAW</span>
                 <span className="text-[10px] font-bold mt-1 ml-0.5 tracking-tighter">ETC</span>
               </div>
-              {/* Subtle underline for the RAW text as seen in reference */}
               <div className="w-10 h-1 bg-black mt-1"></div>
             </div>
     
-            {/* Right Navigation Elements */}
             <div className="flex items-center gap-4 md:gap-6">
-              
-              {/* Search Bar (Hidden on mobile) */}
-              <div className="hidden md:flex items-center gap-2 text-gray-400 text-xs font-semibold cursor-text">
+              <div className="hidden md:flex items-center gap-2 text-gray-400 text-xs font-semibold">
                 <span>Search...</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                 </svg>
               </div>
     
-              {/* Cart */}
-              <div className="hidden md:block text-xs font-bold cursor-pointer">
-                CART (0)
-              </div>
-    
-              {/* Icons Array */}
-              <div className="flex items-center gap-3 md:gap-4">
-                {/* Notification Bell */}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 cursor-pointer">
-                  <path fillRule="evenodd" d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z" clipRule="evenodd" />
-                </svg>
-                
-                {/* User Profile / Dropdown */}
-                <div className="flex items-center gap-1 cursor-pointer">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-                    <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clipRule="evenodd" />
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3 h-3">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
-                </div>
-    
-                {/* Hamburger Menu */}
-                <div className="flex flex-col gap-[4px] cursor-pointer ml-2">
+              <div className="flex items-center gap-4">
+                <div className="hidden md:block text-xs font-bold">CART (0)</div>
+                <div className="flex flex-col gap-[4px] cursor-pointer">
                   <span className="w-6 h-[2px] bg-black"></span>
                   <span className="w-6 h-[2px] bg-black"></span>
                   <span className="w-6 h-[2px] bg-black"></span>
@@ -888,65 +861,257 @@ export default Hero;`,
             </div>
           </header>
     
-          {/* Hero Section */}
-          <main className="relative w-full h-[350px] md:h-[500px] lg:h-[600px] overflow-hidden">
-            {/* Hero Background Image */}
+          <main className="relative w-full h-[400px] md:h-[600px] overflow-hidden">
             <img 
-              src="https://plus.unsplash.com/premium_photo-1759685060765-2ef6291ff9ef?q=80&w=1221&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-              alt="Streetwear model with cap" 
-              className="absolute inset-0 w-full h-full object-cover object-top"
+              src="https://plus.unsplash.com/premium_photo-1708150493761-49666c857410?q=80&w=1221&auto=format&fit=crop" 
+              alt="Hero" 
+              className="absolute inset-0 w-full h-full object-cover"
             />
-            
-            {/* Dark Overlay for Text Readability */}
-            <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center px-4">
-              <h1 
-                className="text-white text-5xl md:text-7xl lg:text-[6rem] font-black uppercase leading-none tracking-tight drop-shadow-lg"
-                style={{ fontFamily: '"Impact", "Oswald", "Arial Black", sans-serif' }}
-              >
+            <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-center px-4">
+              <h1 className="text-white text-5xl md:text-8xl font-black uppercase leading-[0.85] tracking-tight mb-4">
                 Always Be <br /> Original
               </h1>
-              
-              <p className="text-white text-xs md:text-sm font-bold tracking-[0.25em] uppercase mt-4 mb-8 drop-shadow-md">
-                New Arrivals Are Here
-              </p>
-              
-              {/* Ghost Button */}
-              <button className="border border-white text-white px-8 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors duration-300 backdrop-blur-sm bg-black/10">
+              <button className="border-2 border-white text-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
                 Shop Now
               </button>
             </div>
           </main>
     
-          {/* Limited Edition Collection Section */}
-          <section className="py-12 md:py-20 px-4 md:px-8 max-w-7xl mx-auto">
-            <h2 
-              className="text-center text-lg md:text-2xl font-black uppercase tracking-[0.15em] mb-12"
-              style={{ fontFamily: '"Impact", "Oswald", sans-serif' }}
-            >
-              Limited Edition Collection
-            </h2>
-    
-            {/* Product Grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
-              {products.map((product) => (
-                <div key={product.id} className="group cursor-pointer flex flex-col items-center">
-                  {/* Image Container with subtle hover scale */}
-                  <div className="w-full aspect-square overflow-hidden bg-gray-50 flex items-center justify-center p-4 mb-4">
-                    <img 
-                      src={product.image} 
-                      alt={product.name} 
-                      className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
-                    />
+          <section className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
+            <h2 className="text-center text-xl font-black uppercase tracking-[0.2em] mb-12">Limited Edition</h2>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              {products.map((p) => (
+                <div key={p.id} className="group cursor-pointer">
+                  <div className="aspect-square bg-gray-100 mb-4 overflow-hidden">
+                    <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-center">{p.name}</p>
                 </div>
               ))}
             </div>
           </section>
-    
         </div>
       );
     };
     
     export default Hero;`,
   },
+  {
+    id: "11",
+    category: "Form",
+    image: form1,
+    code: `import React from 'react';
+import { 
+  LayoutDashboard, FileText, Users, CreditCard, Database, 
+  Settings, Search, Bell, Upload, ChevronDown, FileUp, 
+  ChevronLeft, ChevronRight 
+} from 'lucide-react';
+
+const Form = () => {
+  // Internal Helper Components
+  const NavItem = ({ icon, label, active = false }) => (
+    <div className={\`flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer transition-all \${active ? 'bg-white/15' : 'hover:bg-white/5 opacity-70 hover:opacity-100'}\`}>
+      {icon} <span className="text-[13px] font-medium">{label}</span>
+    </div>
+  );
+
+  const Step = ({ label, status = 'inactive' }) => (
+    <div className={\`flex items-center gap-2 pb-2 text-[10px] font-black uppercase tracking-widest border-b-2 transition-all \${
+      status === 'active' ? 'border-indigo-600 text-indigo-900' : 
+      status === 'done' ? 'border-emerald-400 text-emerald-500' : 'border-transparent text-zinc-300'
+    }\`}>
+      {label}
+    </div>
+  );
+
+  return (
+    <div className="flex h-screen w-full bg-[#F97316] p-3 font-sans text-zinc-800 overflow-hidden">
+      <aside className="flex w-60 flex-col justify-between p-5 text-white h-full">
+        <div>
+          <div className="mb-8 flex items-center gap-2 font-bold text-lg italic">Logoipsum</div>
+          <nav className="space-y-1">
+            <NavItem icon={<LayoutDashboard size={16} />} label="Dashboard" />
+            <NavItem icon={<FileText size={16} />} label="Quotes" active />
+            <NavItem icon={<Users size={16} />} label="Customers" />
+            <NavItem icon={<Database size={16} />} label="Assets" />
+            <NavItem icon={<Settings size={16} />} label="Settings" />
+          </nav>
+        </div>
+        <div className="bg-slate-900 p-4 rounded-xl text-center">
+           <p className="text-[10px] font-bold">Upgrade Plan</p>
+        </div>
+      </aside>
+
+      <main className="flex-1 rounded-[2.5rem] bg-white flex flex-col shadow-2xl overflow-hidden">
+        <header className="flex items-center justify-between px-8 py-5 border-b border-zinc-50">
+          <div className="text-[10px] text-zinc-400 uppercase font-bold">Quotes / Import Data</div>
+          <div className="flex items-center gap-4">
+            <Search size={16} className="text-zinc-400" />
+            <Bell size={16} className="text-zinc-400" />
+            <div className="h-8 w-8 rounded-full bg-zinc-100"></div>
+          </div>
+        </header>
+
+        <div className="flex-1 overflow-y-auto px-10 py-6">
+          <h1 className="text-2xl font-black text-indigo-950 mb-6">Import Data File</h1>
+          <div className="flex gap-8 border-b mb-8">
+            <Step label="Customer" status="done" />
+            <Step label="Import" status="active" />
+            <Step label="Review" />
+          </div>
+
+          <div className="max-w-xl mx-auto space-y-6">
+            <div className="border-2 border-dashed rounded-xl p-8 text-center bg-zinc-50">
+              <Upload size={24} className="mx-auto mb-2 text-indigo-600" />
+              <p className="text-xs text-zinc-400">Click to upload your file (*.xls)</p>
+            </div>
+            
+            <div className="space-y-4">
+               <div>
+                 <label className="text-[9px] font-bold text-zinc-400 uppercase">Company Name</label>
+                 <div className="border rounded-lg p-2 text-xs">Support Warehouse Ltd</div>
+               </div>
+               <div>
+                 <label className="text-[9px] font-bold text-zinc-400 uppercase">Vendor</label>
+                 <div className="border rounded-lg p-2 text-xs">Hewlett Packard</div>
+               </div>
+            </div>
+          </div>
+        </div>
+
+        <footer className="px-10 py-5 border-t flex justify-between bg-white">
+          <button className="text-[11px] font-bold text-indigo-700">SAVE DRAFT</button>
+          <div className="flex gap-2">
+            <button className="px-6 py-2 bg-zinc-100 rounded-lg text-[11px] font-bold">BACK</button>
+            <button className="px-8 py-2 bg-indigo-600 text-white rounded-lg text-[11px] font-bold">NEXT</button>
+          </div>
+        </footer>
+      </main>
+    </div>
+  );
+};
+
+export default Form;`,
+  },
+  {
+    id: "12",
+    category: "About",
+    image: about1,
+    code: `import React from 'react';
+    import { LayoutGrid } from 'lucide-react'; // Replace with the logo/icon from the original design
+    
+    const About = () => {
+      return (
+        <div className="flex h-screen w-full flex-col bg-white font-sans text-black overflow-hidden selection:bg-black/5">
+          
+          {/* 1. Header Navigation - A fixed-height strip at the very top */}
+          <header className="flex h-16 w-full items-center justify-between border-b border-zinc-100 px-8">
+            <div className="flex items-center gap-6 text-sm font-medium">
+              <a href="#" className="hover:text-zinc-500">About</a>
+              <a href="#" className="hover:text-zinc-500">Projects</a>
+            </div>
+            
+            {/* Placeholder Logo */}
+            <div className="flex items-center gap-2">
+               <LayoutGrid size={24} className="opacity-70" />
+               <span className="font-bold tracking-tighter text-xl">Britta</span>
+            </div>
+    
+            <button className="rounded-full bg-black px-6 py-2 text-sm font-semibold text-white hover:bg-zinc-800 transition-colors">
+              Contact
+            </button>
+          </header>
+    
+          {/* 2. Main Content Grid - Uses flex-1 and absolute to control height */}
+          <main className="relative flex-1 overflow-hidden p-8 lg:p-12 grid grid-cols-12 grid-rows-6 gap-6">
+            
+            {/* ROW 1-4: The Title & Philosophical Blocks */}
+            <div className="col-span-6 row-span-3 flex flex-col justify-end">
+              <h1 className="text-[120px] font-bold leading-[0.85] tracking-tighter uppercase mb-6">
+                About<br />
+                Us
+              </h1>
+              <div className="max-w-md">
+                <h2 className="text-sm font-semibold text-zinc-600 uppercase tracking-wider mb-2">Architectural & Interior Design</h2>
+                <p className="text-sm leading-relaxed text-zinc-700">
+                  Modern Elegance. Designs featuring sleek lines, clear volumes, and high-quality materials, tailored to echo our clients' status and lifestyle.
+                </p>
+              </div>
+            </div>
+    
+            {/* ROW 1-4: The Right-side images */}
+            <div className="col-span-6 row-span-4 grid grid-cols-2 grid-rows-2 gap-6 pt-10">
+              <div className="col-span-1 row-span-2 rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200">
+                 <img 
+                   src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&q=80&w=800" 
+                   alt="Luxury Interior Living Room" 
+                   className="h-full w-full object-cover"
+                 />
+              </div>
+              <div className="col-span-1 row-span-1 flex flex-col justify-between">
+                <div className="rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 aspect-[5/3]">
+                    <img 
+                      src="https://images.unsplash.com/photo-1598928636135-d146006ff4be?auto=format&fit=crop&q=80&w=800" 
+                      alt="Modern Bathroom Detail" 
+                      className="h-full w-full object-cover"
+                    />
+                </div>
+                <div className="mt-4">
+                  <h3 className="text-lg font-extrabold uppercase tracking-tight mb-1 text-zinc-900">Our Philosophy</h3>
+                  <p className="text-sm leading-relaxed text-zinc-700">
+                    At Brittashar, we believe in creating luxurious, personalized environments that reflect our clients' unique identities.
+                  </p>
+                </div>
+              </div>
+            </div>
+    
+            {/* ROW 5-6: "Meet The Principals" Band */}
+            <div className="col-span-12 row-span-2 flex items-center justify-between rounded-[2.5rem] bg-zinc-50 border border-zinc-100 px-10">
+              
+              <PrincipalCard 
+                image="https://randomuser.me/api/portraits/men/32.jpg" 
+                name="Jay Britto" 
+                title="Founder AND Principal"
+              />
+    
+              <div className="flex flex-col items-center text-center max-w-sm">
+                 <div className="rounded-full bg-white border border-zinc-200 p-3 mb-3">
+                    <p className="text-xl font-extrabold leading-none text-zinc-900 border-b border-zinc-900 tracking-tighter">M—T—P</p>
+                 </div>
+                 <h3 className="text-3xl font-extrabold uppercase leading-none tracking-tight mb-2 text-zinc-900">Meet the Principals</h3>
+                 <p className="text-xs leading-relaxed text-zinc-600 px-4">
+                   As an interior and interior designer, Jay Britto oversees the day-to-day operations while David Charette and the design and manufacture of our unique furniture and associated accessories.
+                 </p>
+              </div>
+    
+              <PrincipalCard 
+                image="https://randomuser.me/api/portraits/men/46.jpg" 
+                name="David Charette" 
+                title="Founder AND Principal"
+              />
+    
+            </div>
+          </main>
+    
+        </div>
+      );
+    };
+    
+    // --- Subcomponent: Principal Profile Card ---
+    const PrincipalCard = ({ image, name, title }) => (
+      <div className="flex items-center gap-5 max-w-xs">
+        <div className="h-32 w-32 rounded-full overflow-hidden border-4 border-white shadow-xl">
+            <img src={image} alt={name} className="h-full w-full object-cover" />
+        </div>
+        <div className="flex flex-col gap-0.5">
+           <span className="text-[10px] font-semibold text-zinc-400 uppercase tracking-widest">{title}</span>
+           <h4 className="text-lg font-extrabold uppercase leading-tight tracking-tight text-zinc-900">{name}</h4>
+        </div>
+      </div>
+    );
+    
+    export default About;`,
+  },
 ];
+
+ 

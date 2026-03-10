@@ -4,20 +4,19 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ComponentCard } from "@/components/ComponentCard";
 import { TemplateCard } from "@/components/TemplateCard";
-import { components, categories } from "@/data/components";
 import { templates } from "@/data/templates";
+import {  components } from "@/data/pages";
+import { categori, component } from "@/data/components";
+import { CompCard, FeaturedCard } from "@/components/FeaturedCard";
+import { PageCard } from "@/components/PagesCard";
 
 const Index = () => {
-  const featured = components.slice(0, 4);
   const popularTemplates = templates.slice(0, 3);
 
   return (
     <>
       <div className="min-h-screen flex bg-transparent text-white flex-col">
         <Navbar />
-
-
-
         {/* Hero */}
         <section className="relative py-20 md:py-28 text-white overflow-hidden">
 
@@ -41,13 +40,13 @@ const Index = () => {
               Free & Open Source Components
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+            <h2 className="text-4xl md:text-6xl font-extrabold leading-tight">
               Build Better <br />
               Interfaces{" "}
               <span className="bg-gradient-to-r from-primary to-[hsl(260,70%,58%)] bg-clip-text text-transparent">
                 Faster
               </span>
-            </h1>
+            </h2>
 
             <p className="mt-5 text-lg text-gray-200 max-w-xl">
               Ready-to-use React UI components and website templates.
@@ -90,23 +89,25 @@ const Index = () => {
 
             {/* Top Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-transparent"></div>
+                <h2 className="text-3xl z-10 relative font-bold text-center mb-3">Production-Ready React Components & UI Layouts</h2>
             {/* <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black to-black"></div> */}
 
-            <div className="bg-zic-500 relative z-10 py-20 borde border-gray-100">
+            <div className="bg-zic-500 relative z-10 py-1 borde border-gray-100">
               <div className="container mx-auto px-6 max-w-6xl">
                 {/* Clean, Three-Column Grid */}
-                <div className="grid md:grid-cols-3 divide-x divide-gray-100 text-center">
+                
+                <div className="grid md:grid-cols-3 mt-10 divide-x divide-gray-100 text-center">
 
                   {/* Coded Elements Stat */}
                   <div className="px-10 flex flex-col items-center">
                     <h2 className="text-5xl font-extrabold text-blue-600 mb-4 tracking-tight">
                       70+
                     </h2>
-                    <h3 className="text-xl font-bold text-slate-800 mb-3">
-                      Coded Elements
-                    </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed max-w-[250px]">
-                      From buttons, to inputs, navbars, alerts or cards, you are covered
+                    <h2 className="text-xl font-bold text-slate-200 mb-3">
+                      Modular Design Blocks
+                    </h2>
+                    <p className="text-gray-400 text-sm leading-relaxed max-w-[250px]">
+                     Mix and match pre-designed sections like Heros, Features, and Pricing tables. Change the styling props to unleash your creativity instantly.
                     </p>
                   </div>
 
@@ -115,24 +116,24 @@ const Index = () => {
                     <h2 className="text-5xl font-extrabold text-blue-600 mb-4 tracking-tight">
                       15+
                     </h2>
-                    <h3 className="text-xl font-bold text-slate-800 mb-3">
-                      Design Blocks
-                    </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed max-w-[250px]">
-                      Mix the sections, change the colors and unleash your creativity
+                    <h2 className="text-xl font-bold text-slate-200 mb-3">
+                    Interactive Components
+                    </h2>
+                    <p className="text-gray-400 text-sm leading-relaxed max-w-[250px]">
+                      From animated buttons and custom inputs to responsive navbars and dynamic cards—every element is built with React and fully documented.
                     </p>
                   </div>
 
                   {/* Pages Stat */}
                   <div className="px-10 flex flex-col items-center">
                     <h2 className="text-5xl font-extrabold text-blue-600 mb-4 tracking-tight">
-                      4
+                      5+
                     </h2>
-                    <h3 className="text-xl font-bold text-slate-800 mb-3">
-                      Pages
-                    </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed max-w-[250px]">
-                      Save 3-4 weeks of work when you use our pre-made pages for your website
+                    <h2 className="text-xl font-bold text-slate-200 mb-3">
+                     Full-Page Templates
+                    </h2>
+                    <p className="text-gray-400 text-sm leading-relaxed max-w-[250px]">
+                     Save 3–4 weeks of development time using our production-ready landing pages, dashboards, and portfolio layouts.
                     </p>
                   </div>
 
@@ -152,7 +153,7 @@ const Index = () => {
               <h2 className="text-2xl font-bold">Featured Pages</h2>
 
               <Link
-                to="/components"
+                to="/pages"
                 className="text-sm font-medium text-primary hover:underline flex items-center gap-1"
               >
                 View all <ArrowRight className="h-3.5 w-3.5" />
@@ -160,8 +161,8 @@ const Index = () => {
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {featured.map((c) => (
-                <ComponentCard key={c.id} component={c} />
+              {components.slice(0, 4).map((c) => (
+                <FeaturedCard key={c.id} component={c} />
               ))}
             </div>
 
@@ -169,25 +170,24 @@ const Index = () => {
 
 
           {/* CATEGORIES */}
-          <section className="relative z-10 container pb-16">
+          <section className="relative z-10 container py-16">
 
-            <h2 className="text-2xl font-bold mb-8">
-              Component Categories
-            </h2>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-2xl font-bold">Components Pages</h2>
 
-              {categories.map((cat) => (
-                <Link
-                  key={cat}
-                  to={`/components?category=${cat}`}
-                  className="flex items-center gap-3 rounded-lg border p-4 hover:border-primary/30 hover:bg-secondary/50 transition group"
-                >
-                  <Box className="h-4 w-4 text-primary" />
-                  <span className="text-sm font-medium">{cat}</span>
-                </Link>
+              <Link
+                to="/components"
+                className="text-sm font-medium text-primary hover:underline flex items-center gap-1"
+              >
+                View all <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 group-hover:cursor-pointer group-hover:border">
+              {component.slice(0, 4).map((c) => (
+                <CompCard key={c.id} component={c} />
               ))}
-
             </div>
 
           </section>

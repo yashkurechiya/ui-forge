@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ComponentCard } from "@/components/ComponentCard";
-import { components, categories } from "@/data/components";
+import { component, categori } from "@/data/components";
 
 const ComponentsPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -11,8 +11,8 @@ const ComponentsPage = () => {
 
   const filtered =
     activeCategory === "All"
-      ? components
-      : components.filter((c) => c.category === activeCategory);
+      ? component
+      : component.filter((c) => c.category === activeCategory);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -26,7 +26,7 @@ const ComponentsPage = () => {
           <aside className="md:w-48 shrink-0">
             <h3 className="text-xs font-semibold uppercase text-muted-foreground mb-3 tracking-wider">Categories</h3>
             <ul className="space-y-1">
-              {["All", ...categories].map((cat) => (
+              {["All", ...categori].map((cat) => (
                 <li key={cat}>
                   <button
                     onClick={() => setSearchParams(cat === "All" ? {} : { category: cat })}
