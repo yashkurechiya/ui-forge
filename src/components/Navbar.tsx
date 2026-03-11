@@ -55,6 +55,11 @@ export const Navbar = () => {
               className={`${linkClass("/templates")} text-gray-100 hover:text-white transition`}>
               <h2 className="text-gray-200">Templates</h2>
             </Link>
+            <Link
+              to="/about"
+              className={`${linkClass("/about")} text-gray-100 hover:text-white transition`}>
+              <h2 className="text-gray-200">About Us</h2>
+            </Link>
           </nav>
 
           {/* Center Navigation */}

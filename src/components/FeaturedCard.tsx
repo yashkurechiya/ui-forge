@@ -6,7 +6,7 @@ import { components, PageComponent } from "@/data/pages";
 
 export const FeaturedCard = ({ component }) => (
   <Link
-    to={`/pages?category=${component.categories}`}
+    to={`/pages?category=${component.category}`}
     className="group relative block rounded-xl bg-black p-2 overflow-hidden border border-transparent hover:border-blue-600 transition-all"
   >
     {/* Image */}
