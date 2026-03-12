@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Search, Github, LayoutGrid, FileText, Blocks, ArrowDownToLine } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Navbar = () => {
   const location = useLocation();
@@ -8,6 +8,24 @@ export const Navbar = () => {
 
   const isActive = (path: string) =>
     location.pathname === path || location.pathname.startsWith(path + "/");
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // If scroll is greater than 50px, set to true
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the listener when component unmounts
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const linkClass = (path: string) =>
     `flex items-center gap-2 text-sm font-medium transition-all duration-200 ${isActive(path) ? "text-blue-500" : "text-slate-600 hover:text-blue-500"
@@ -18,52 +36,54 @@ export const Navbar = () => {
     <header className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
       <div className="container max-w-6xl pointer-events-auto">
         {/* The "Pill" - Glassmorphism style */}
-        <div className="flex h-14 items-center justify-between rounded-xl border border-white/10 bg-black px-6 shadow-lg backdrop-blur-md">
+        <div className={`flex h-14 items-center justify-between rounded-xl border border-white/10 ${isScrolled ? "bg-black" : "bg-white/10"
+          } px-6 shadow-lg backdrop-blur-md transition-all duration-300`}>
+          {/* Your Navbar Content */}
+         
+        {/* Logo & Brand */}
+        <div className="flex items-center gap-2">
+          <Link to={'/'} className="flex items-center gap-2">
+            <img src="/logo.png" alt="Panele" className="h-8 w-auto" />
+          </Link>
+        </div>
 
-          {/* Logo & Brand */}
-          <div className="flex items-center gap-2">
-            <Link to={'/'} className="flex items-center gap-2">
-              <img src="/logo.png" alt="Panele" className="h-8 w-auto" />
-            </Link>
-          </div>
-
-          <nav className="hidden md:flex text-white items-center gap-8 text-sm">
+        <nav className="hidden md:flex text-white items-center gap-8 text-sm">
 
 
 
-            <Link
+          <Link
 
-              to="/components"
+            to="/components"
 
-              className={`${linkClass("/components")} text-gray-100 hover:text-white transition`}
+            className={`${linkClass("/components")} text-gray-100 hover:text-white transition`}
 
-            >
-<h2 className="text-gray-200">Components</h2>
+          >
+            <h2 className="text-gray-200">Components</h2>
 
-            </Link>
+          </Link>
 
-            <Link
+          <Link
 
-              to="/pages"
+            to="/pages"
 
-              className={`${linkClass("/pages")} text-gray-100 hover:text-white transition`}
-            >
-              <h2 className="text-gray-200">Pages</h2>
-            </Link>
-            <Link
-              to="/templates"
-              className={`${linkClass("/templates")} text-gray-100 hover:text-white transition`}>
-              <h2 className="text-gray-200">Templates</h2>
-            </Link>
-            <Link
-              to="/about"
-              className={`${linkClass("/about")} text-gray-100 hover:text-white transition`}>
-              <h2 className="text-gray-200">About Us</h2>
-            </Link>
-          </nav>
+            className={`${linkClass("/pages")} text-gray-100 hover:text-white transition`}
+          >
+            <h2 className="text-gray-200">Pages</h2>
+          </Link>
+          <Link
+            to="/templates"
+            className={`${linkClass("/templates")} text-gray-100 hover:text-white transition`}>
+            <h2 className="text-gray-200">Templates</h2>
+          </Link>
+          <Link
+            to="/about"
+            className={`${linkClass("/about")} text-gray-100 hover:text-white transition`}>
+            <h2 className="text-gray-200">About Us</h2>
+          </Link>
+        </nav>
 
-          {/* Center Navigation */}
-          {/* <div className="hidden sm:flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 backdrop-blur-md">
+        {/* Center Navigation */}
+        {/* <div className="hidden sm:flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 backdrop-blur-md">
 
             <Search className="h-4 w-4 text-gray-400" />
             <input
@@ -79,8 +99,8 @@ export const Navbar = () => {
 
             />
           </div> */}
-        </div>
       </div>
-    </header>
+    </div>
+    </header >
   );
 };
