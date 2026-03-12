@@ -42,7 +42,8 @@ const PageDetails = () => {
         <div className="grid lg:grid-cols-1 gap-8">
           {/* Preview */}
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-white mb-3">Preview</h2>
+            <h2 className="text-sm font-semibold uppercase 
+             tracking-wider text-white mb-3"><span className="bg-white/20 p-2 rounded-full">Preview</span></h2>
             <div className="   bg-white p-1 flex items-center justify-center min-h-[250px]">
               <div className="text-center">
                 <img src={component.image} alt="preview" />

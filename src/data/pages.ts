@@ -21,7 +21,7 @@ export interface PageComponent {
 }
 
 export const categories = [
-  "Hero", "SignUp", "Navbar", "Footer", "Form", "Testimonials", "Grid Design", "About", "Contact Us"
+  "Hero", "SignUp", "Form", "Testimonials", "Grid Design", "About", "Contact Us"
 ];
 
 export const components: PageComponent[] = [
